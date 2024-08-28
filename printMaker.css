@@ -1,0 +1,195 @@
+@page {
+    size: A4 portrait;
+    /* 横の場合はlandscape */
+    margin: 0mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    background: #eee;
+    width: 210mm;
+    -webkit-print-color-adjust: exact;
+    line-height: 1.5em;
+
+}
+
+.page {
+    background: #fff;
+    box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+    margin: 5mm;
+    position: relative;
+    width: 210mm;
+    height: 296.5mm;
+    page-break-after: always;
+    box-sizing: border-box;
+    padding: 10mm;
+}
+
+.info {
+    justify-content: space-between;
+}
+
+.invoice-info-left {
+    width: 100mm;
+    width: 65mm;
+    height: 40mm;
+    padding: 5mm 22mm 0 13mm;
+    line-height: 1.2;
+    font-size: 12px;
+}
+
+.invoice-info-left .text {
+    margin-top: 5px;
+    text-align: right;
+    font-size: 10px;
+}
+
+.invoice-info-right {
+    width: 70mm;
+}
+
+.invoice-info-right .header .title {
+    font-size: 23px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 10px;
+    padding: 5px 0;
+    background-color: #f1f1f1;
+}
+
+.invoice-info-right .header p {
+    font-size: 10px;
+    text-align: right;
+}
+
+.invoice-info-right .ownCo {
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.invoice-info-right .ownCo address strong {
+    font-size: 12px;
+}
+
+.invoice-info-right .ownCo .bank {
+    margin-top: 10px;
+}
+
+.invoice-info-right .ownCo .bank {
+    margin-top: 10px;
+}
+
+.message {
+    justify-content: space-between;
+    height: 10mm;
+    padding: 0 5mm 0 8mm;
+}
+
+.msg-left {
+    width: 40%;
+}
+
+.msg-left .contents {
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+
+.msg-right .msg-tbl {
+    margin: 1mm;
+    border-collapse: collapse;
+}
+
+.msg-right .msg-tbl th,
+.msg-right .msg-tbl td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    padding: 8.2px 5px;
+    font-size: 20px;
+}
+
+.msg-right .msg-tbl td {
+    text-align: center;
+    padding-left: 4px;
+    width: 55mm;
+}
+
+.list {
+    width: 100%;
+}
+
+.list .table-contents {
+    margin-top: 1mm;
+    font-size: 12px;
+}
+
+.list .table-contents table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.list .table-contents table th,
+.list .table-contents table td {
+    border-color: #c7c7c7;
+    padding: 0px;
+    max-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+}
+
+.list .table-contents table th {
+    font-weight: normal;
+    font-size: 10px;
+    border-width: 0px 0px 2px 0px;
+    border-style: none none solid none;
+}
+
+.list .table-contents table td {
+    line-height: 1.6;
+    font-size: 9px;
+    border-width: 0px 0px 1px 0px;
+    border-style: none none solid none;
+    width: fit-content;
+}
+
+
+
+.bottom-note {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    padding: 5px;
+    width: 185mm;
+    height: 18mm;
+    display: flex;
+    position: absolute;
+    bottom: 10mm;
+}
+
+.bottom-note .note-title {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    width: 8mm;
+}
+
+.bottom-note .note-contents {
+    margin-left: 2mm;
+    line-height: 1;
+    width: 170mm;
+    height: 18mm;
+}
