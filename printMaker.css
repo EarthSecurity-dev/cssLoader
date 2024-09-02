@@ -4,11 +4,11 @@
     margin: 0mm;
 }
 
-#container .flex {
+.section .flex {
     display: flex;
 }
 
-#container body {
+.section body {
     background: #eee;
     width: 210mm;
     -webkit-print-color-adjust: exact;
@@ -16,7 +16,7 @@
 
 }
 
-#container .page {
+.section .page {
     background: #fff;
     box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
     margin: 5mm;
@@ -28,11 +28,11 @@
     padding: 10mm;
 }
 
-#container .info {
+.section .info {
     justify-content: space-between;
 }
 
-#container .invoice-info-left {
+.section .invoice-info-left {
     width: 100mm;
     width: 65mm;
     height: 40mm;
@@ -41,17 +41,17 @@
     font-size: 12px;
 }
 
-#container .invoice-info-left .text {
+.section .invoice-info-left .text {
     margin-top: 5px;
     text-align: right;
     font-size: 10px;
 }
 
-#container .invoice-info-right {
+.section .invoice-info-right {
     width: 70mm;
 }
 
-#container .invoice-info-right .header .title {
+.section .invoice-info-right .header .title {
     font-size: 23px;
     font-weight: normal;
     text-align: center;
@@ -60,52 +60,52 @@
     background-color: #f1f1f1;
 }
 
-#container .invoice-info-right .header p {
+.section .invoice-info-right .header p {
     font-size: 10px;
     text-align: right;
 }
 
-#container .invoice-info-right .ownCo {
+.section .invoice-info-right .ownCo {
     font-size: 10px;
     line-height: 1.2;
 }
 
-#container .invoice-info-right .ownCo address strong {
+.section .invoice-info-right .ownCo address strong {
     font-size: 12px;
 }
 
-#container .invoice-info-right .ownCo .bank {
+.section .invoice-info-right .ownCo .bank {
     margin-top: 10px;
 }
 
-#container .invoice-info-right .ownCo .bank {
+.section .invoice-info-right .ownCo .bank {
     margin-top: 10px;
 }
 
-#container .message {
+.section .message {
     justify-content: space-between;
     height: 10mm;
     padding: 0 5mm 0 8mm;
 }
 
-#container .msg-left {
+.section .msg-left {
     width: 40%;
 }
 
-#container .msg-left .contents {
+.section .msg-left .contents {
     font-size: 10px;
     line-height: 1.2;
     text-align: left;
 }
 
 
-#container .msg-right .msg-tbl {
+.section .msg-right .msg-tbl {
     margin: 1mm;
     border-collapse: collapse;
 }
 
-#container .msg-right .msg-tbl th,
-#container .msg-right .msg-tbl td {
+.section .msg-right .msg-tbl th,
+.section .msg-right .msg-tbl td {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
@@ -113,13 +113,13 @@
     font-size: 20px;
 }
 
-#container .msg-right .msg-tbl td {
+.section .msg-right .msg-tbl td {
     text-align: center;
     padding-left: 4px;
     width: 55mm;
 }
 
-#container .bottom-note {
+.section .bottom-note {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
@@ -131,33 +131,33 @@
     bottom: 10mm;
 }
 
-#container .bottom-note .note-title {
+.section .bottom-note .note-title {
     font-size: 12px;
     font-weight: bold;
     line-height: 1.5;
     width: 8mm;
 }
 
-#container .bottom-note .note-contents {
+.section .bottom-note .note-contents {
     margin-left: 2mm;
     line-height: 1;
     width: 170mm;
     height: 18mm;
 }
 
-#container {
+.section {
     display: none;
 }
 
-#container .invoice-table #container .invoice-table {
+.section .invoice-table .section .invoice-table {
     max-height: 250px;
     width: 100%;
     border-collapse: collapse;
     overflow-y: auto;
 }
 
-#container .invoice-table th,
-#container .invoice-table td {
+.section .invoice-table th,
+.section .invoice-table td {
     border: 1px solid #ccc;
     padding: 5px;
     text-align: left;
