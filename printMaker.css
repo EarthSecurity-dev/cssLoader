@@ -4,11 +4,11 @@
     margin: 0mm;
 }
 
-.section .flex {
+.flex {
     display: flex;
 }
 
-.section body {
+body {
     background: #eee;
     width: 210mm;
     -webkit-print-color-adjust: exact;
