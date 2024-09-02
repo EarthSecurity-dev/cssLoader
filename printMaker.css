@@ -1,164 +1,414 @@
+/* A4縦用のベース設定 */
 @page {
-    size: A4 portrait;
-    /* 横の場合はlandscape */
+    size: A4 portrait; /* 横の場合はlandscape */
     margin: 0mm;
 }
 
-.flex {
-    display: flex;
+/* 各要素の余白リセット */
+*{
+    margin: 0mm;
+    padding: 0mm;
 }
 
+/* 印刷時の調子を整える */
 body {
-    background: #eee;
-    width: 210mm;
+    width: 210mm; /* 用紙の横幅を改めて指定 Chrome用 */
     -webkit-print-color-adjust: exact;
+    color-adjust: exact;
     line-height: 1.5em;
-
 }
 
-.section>div {
-    background: #fff;
-    box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
-    margin: 5mm;
-    position: relative;
-    width: 210mm;
-    height: 296.5mm;
+/* 印刷1ページ用のコンテンツはここで定義 */
+.page {
+    width: 210mm; /* 用紙の横幅を改めて指定 */
+    height: 296.5mm;/* 高さには0.5mm余裕をもたせる */
     page-break-after: always;
+
     box-sizing: border-box;
-    padding: 10mm;
+    padding: 10mm 10mm;/* 用紙の余白 */
+    font-size: 11pt;
 }
 
-.section .info {
-    justify-content: space-between;
+@media screen {
+    body {
+        background: #eee;
+    }
+    .page {
+        background: white; /* 背景を白く */
+        box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); /* ドロップシャドウ */
+        margin: 5mm;
+    }
 }
 
-.section .invoice-info-left {
-    width: 100mm;
-    width: 65mm;
-    height: 40mm;
-    padding: 5mm 22mm 0 13mm;
-    line-height: 1.2;
+.page-contents{
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    position: absolute;
+}
+
+.list{
+    width: 100%;
+    position: absolute;
+    top:55mm
+}
+.salary-first-list{
+    top:107mm;
+}
+.salary-second-list{
+    top:30mm;
+}
+.invoice-first-list{
+    top:55mm
+}
+.invoice-second-list{
+    top:55mm
+}
+
+
+.info{
+    display: flex;
+    justify-content:space-between;
+}
+
+.sign{
+    width: 100%;
+    position: absolute;
+    top:275mm;
+    display: flex;
+    justify-content:space-between;
+}
+.sign .text{
     font-size: 12px;
 }
-
-.section .invoice-info-left .text {
-    margin-top: 5px;
-    text-align: right;
+.sign .contents{
     font-size: 10px;
+    border-width: 2px;
+    border-style: none  none solid none ;
+    border-color: #c7c7c7;
 }
 
-.section .invoice-info-right {
-    width: 70mm;
+.salary-info-left{
+    width: 50%;
 }
-
-.section .invoice-info-right .header .title {
-    font-size: 23px;
-    font-weight: normal;
+.salary-info-left .title{
+    font-size: 20px;
     text-align: center;
-    letter-spacing: 10px;
-    padding: 5px 0;
+    letter-spacing: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #f1f1f1;
 }
-
-.section .invoice-info-right .header p {
-    font-size: 10px;
+.salary-info-left .period{
     text-align: right;
-}
-
-.section .invoice-info-right .ownCo {
+    line-height: 1.5;
     font-size: 10px;
-    line-height: 1.2;
+}
+.salary-info-left .name{
+    line-height: 1.5;
+    font-size: 15px;
 }
 
-.section .invoice-info-right .ownCo address strong {
-    font-size: 12px;
-}
-
-.section .invoice-info-right .ownCo .bank {
-    margin-top: 10px;
-}
-
-.section .invoice-info-right .ownCo .bank {
-    margin-top: 10px;
-}
-
-.section .message {
-    justify-content: space-between;
-    height: 10mm;
-    padding: 0 5mm 0 8mm;
-}
-
-.section .msg-left {
-    width: 40%;
-}
-
-.section .msg-left .contents {
-    font-size: 10px;
-    line-height: 1.2;
-    text-align: left;
-}
-
-
-.section .msg-right .msg-tbl {
+.salary-info-left .msg-tbl{
     margin: 1mm;
     border-collapse: collapse;
 }
-
-.section .msg-right .msg-tbl th,
-.section .msg-right .msg-tbl td {
+.salary-info-left .msg-tbl th, .msg-tbl td {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
-    padding: 8.2px 5px;
-    font-size: 20px;
+}
+.salary-info-left .msg-tbl tr .code{
+    width: 30mm;
+}
+.salary-info-left .msg-tbl tr .worker-name{
+    width: 60mm;
+}
+.salary-info-left .msg-tbl tr th{
+    font-weight: normal;
+    background-color: #f1f1f1;
+    text-align:center;
+    font-size: 13px;
+    padding: 2px;
+}
+.salary-info-left .msg-tbl tr td{
+    text-align:center;
+    font-size: 12px;
+    padding: 1px;
 }
 
-.section .msg-right .msg-tbl td {
+
+.invoice-info-left{
+    text-align: left;
+    width: 110mm;
+}
+.invoice-info-left .envelope-window{
+    margin-top: 5mm;
+    margin-left: 13mm;
+    width: 90mm;
+    height: 40mm;
+    /* 印刷テスト次第で45mmに戻す */
+}
+.invoice-info-left .envelope-window .customer{
+    margin-bottom: 20mm;
+    margin-right: 25mm;
+    width: 65mm;
+    height: 25mm;
+}
+.invoice-info-left .envelope-window .customer .customer-contents{
+    padding: 2px;
+    line-height: 1.2;
+    font-size: 12px;
+    border-width: 0px 0px 1px 0px;
+    border-style: none none solid none;
+}
+.invoice-info-left .envelope-window .customer .text{
+    margin-top: 5px;
+    text-align: right;
+    line-height: 1.2;
+    font-size: 10px;
+}
+
+
+.invoice-info-right{
+    text-align: right;
+    width: 70mm;
+}
+.invoice-info-right .header{
+    text-align: right;
+}
+.invoice-info-right .header .date{
+    font-size: 10px;
+}
+.invoice-info-right .header .title {
+    font-size: 23px;
     text-align: center;
-    padding-left: 4px;
-    width: 55mm;
+    letter-spacing: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f1f1f1;
+}
+.invoice-info-right .ownCo{
+    width: 70mm;
+    text-align: left;
+    line-height: 1.2;
+    font-size: 10px;
+}
+.invoice-info-right .ownCo .ownCo-contents{
+    text-align: left;
+}
+.invoice-info-right .ownCo .bank{
+    margin-top: 10px;
 }
 
-.section .bottom-note {
+.salary-info-right{
+    text-align: left;
+}
+.salary-info-right .top-note{
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
     padding: 5px;
-    width: 185mm;
-    height: 18mm;
+    height: 20mm;
+    width: 80mm;
     display: flex;
-    position: absolute;
-    bottom: 10mm;
-}
 
-.section .bottom-note .note-title {
+}
+.salary-info-right .top-note .note-title{
     font-size: 12px;
     font-weight: bold;
     line-height: 1.5;
     width: 8mm;
 }
+.salary-info-right .top-note .note-contents{
+    margin-left: 2mm;
+    line-height: 1.5;
+    font-size: 10px;
+}
+.salary-info-right .company-name{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 13px;
+}
 
-.section .bottom-note .note-contents {
+.message{
+    display: flex;
+    justify-content:space-between;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    height: 10mm;
+}
+.message .msg-left{
+    padding-left: 3mm;
+    width: 40%;
+}
+.message .msg-left .contents{
+    line-height: 1.2;
+    font-size: 10px;
+
+}
+.message .msg-right .contents .msg-tbl{
+    margin: 1mm;
+    border-collapse: collapse;
+}
+.message .msg-right .contents .msg-tbl th{
+    text-align:center;
+
+}
+.message .msg-right .contents .msg-tbl td{
+    text-align: center;
+    padding-left: 4px;
+    width: 55mm;
+}
+.message .msg-right .contents .msg-tbl th,.msg-tbl td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.container .bottom-note{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    padding: 5px;
+    height: 18mm;
+    margin-top: 200mm;  /*本来195mm*/
+    display: flex;
+
+}
+.container .bottom-note .note-title{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    width: 8mm;
+}
+.container .bottom-note .note-contents{
     margin-left: 2mm;
     line-height: 1;
     width: 170mm;
-    height: 18mm;
+    height:18mm ;
+
 }
 
-.section {
-    display: none;
-}
+.tables{
+    margin-top: 1mm;
 
-.section .invoice-table {
-    max-height: 250px;
+}
+.tables .subtotal-tbl-contents{
+    display: flex;
+    justify-content:space-between;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl{
+    width: 85%;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl table{
+    table-layout: fixed;
     width: 100%;
+    margin-top: 5px;
     border-collapse: collapse;
-    overflow-y: auto;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl .tbl-label{
+    font-size: 12px;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl table tr th ,.tables .subtotal-tbl table tr td{
+    font-weight: normal;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid solid solid solid;
+    border-color: #c7c7c7;
+    line-height: 1.5;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl table tr .title{
+    font-size: 15px;
+    width: 40px;
+    text-align: center;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl table th{
+    background-color: #f1f1f1;
+    font-size: 10px;
+}
+.tables .subtotal-tbl-contents .subtotal-tbl table td {
+    text-align: right;
+    font-size: 9px;
 }
 
-.section .invoice-table th,
-.section .invoice-table td {
-    border: 1px solid #ccc;
-    padding: 5px;
-    text-align: left;
+
+.tables .subtotal-tbl-contents .total{
+    display: flex;
+    align-items: flex-end;
+    width: 100px;
+}
+
+.tables .subtotal-tbl-contents .total table{
+    border-collapse: collapse;
+    width: 100%;
+    align-items:flex-end;
+}
+.subtotal-tbl-contents .total .msg-tbl th,.subtotal-tbl-contents .total .msg-tbl td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    width: 20mm;
+}
+.subtotal-tbl-contents .total .msg-tbl tr th{
+    font-weight: normal;
+    background-color: #f1f1f1;
+    text-align:center;
+    font-size: 13px;
+    padding: 2px;
+}
+.subtotal-tbl-contents .total .msg-tbl tr td{
+    text-align: right;
+    font-size: 12px;
+    padding: 1px;
+}
+
+
+.list .table-contents{
+    margin-top: 1mm;
+}
+.list .table-contents table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.list .table-contents .tbl-label{
+    font-size: 12px;
+}
+.list .table-contents table th{
+    font-weight: normal;
+    font-size: 10px;
+    border-width: 0px 0px 2px 0px;
+    border-style: none none solid none;
+}
+.list .table-contents table td {
+    line-height: 1.6;
+    font-size: 9px;
+    border-width: 0px 0px 1px 0px;
+    border-style: none none solid none;
+    width: fit-content;
+}
+.list .table-contents table th,.list .table-contents table td {
+    border-color: #c7c7c7;
+    padding: 0px;
+    max-width:120px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+}
+
+.list .result{
+    display: flex;
+    justify-content:space-between;
+}
+.list .result table{
+    width: 300px;
+}
+.list .result table th, .list .result table td{
+    padding-left: 10px;
+    padding-right: 10px;
 }
