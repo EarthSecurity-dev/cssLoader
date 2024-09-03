@@ -69,7 +69,7 @@ body {
 
 
 .info{
-    display: flex;
+    display: flex !important;
     justify-content:space-between;
 }
 
@@ -234,7 +234,7 @@ body {
 }
 
 .message{
-    display: flex;
+    display: flex !important;
     justify-content:space-between;
     margin-left: 5mm;
     margin-right: 5mm;
