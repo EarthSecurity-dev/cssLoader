@@ -1,18 +1,21 @@
 /* A4縦用のベース設定 */
 @page {
-    size: A4 portrait; /* 横の場合はlandscape */
+    size: A4 portrait;
+    /* 横の場合はlandscape */
     margin: 0mm;
 }
 
 /* 各要素の余白リセット */
-*{
+* {
     margin: 0mm;
     padding: 0mm;
+    list-style: none;
 }
 
 /* 印刷時の調子を整える */
 body {
-    width: 210mm; /* 用紙の横幅を改めて指定 Chrome用 */
+    width: 210mm;
+    /* 用紙の横幅を改めて指定 Chrome用 */
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
     line-height: 1.5em;
@@ -20,12 +23,15 @@ body {
 
 /* 印刷1ページ用のコンテンツはここで定義 */
 .page {
-    width: 210mm; /* 用紙の横幅を改めて指定 */
-    height: 296.5mm;/* 高さには0.5mm余裕をもたせる */
+    width: 210mm;
+    /* 用紙の横幅を改めて指定 */
+    height: 296.5mm;
+    /* 高さには0.5mm余裕をもたせる */
     page-break-after: always;
 
     box-sizing: border-box;
-    padding: 10mm 10mm;/* 用紙の余白 */
+    padding: 10mm 10mm;
+    /* 用紙の余白 */
     font-size: 11pt;
 }
 
@@ -33,67 +39,77 @@ body {
     body {
         background: #eee;
     }
+
     .page {
-        background: white; /* 背景を白く */
-        box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); /* ドロップシャドウ */
+        background: white;
+        /* 背景を白く */
+        box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+        /* ドロップシャドウ */
         margin: 5mm;
     }
 }
 
-.page-contents{
+.page-contents {
     position: relative;
 }
 
-.container{
+.container {
     width: 100%;
     position: absolute;
 }
 
-.list{
+.list {
     width: 100%;
     position: absolute;
-    top:55mm
+    top: 55mm
 }
-.salary-first-list{
-    top:107mm;
+
+.salary-first-list {
+    top: 107mm;
 }
-.salary-second-list{
-    top:30mm;
+
+.salary-second-list {
+    top: 30mm;
 }
-.invoice-first-list{
-    top:55mm
+
+.invoice-first-list {
+    top: 55mm
 }
-.invoice-second-list{
-    top:55mm
+
+.invoice-second-list {
+    top: 55mm
 }
 
 
-.info{
-    display: flex !important;
-    justify-content:space-between;
-}
-
-.sign{
-    width: 100%;
-    position: absolute;
-    top:275mm;
+.info {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-.sign .text{
+
+.sign {
+    width: 100%;
+    position: absolute;
+    top: 275mm;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign .text {
     font-size: 12px;
 }
-.sign .contents{
+
+.sign .contents {
     font-size: 10px;
     border-width: 2px;
-    border-style: none  none solid none ;
+    border-style: none none solid none;
     border-color: #c7c7c7;
 }
 
-.salary-info-left{
+.salary-info-left {
     width: 50%;
 }
-.salary-info-left .title{
+
+.salary-info-left .title {
     font-size: 20px;
     text-align: center;
     letter-spacing: 5px;
@@ -101,112 +117,117 @@ body {
     padding-bottom: 5px;
     background-color: #f1f1f1;
 }
-.salary-info-left .period{
+
+.salary-info-left .period {
     text-align: right;
     line-height: 1.5;
     font-size: 10px;
 }
-.salary-info-left .name{
+
+.salary-info-left .name {
     line-height: 1.5;
     font-size: 15px;
 }
 
-.salary-info-left .msg-tbl{
+.salary-info-left .msg-tbl {
     margin: 1mm;
     border-collapse: collapse;
 }
-.salary-info-left .msg-tbl th, .msg-tbl td {
+
+.salary-info-left .msg-tbl th,
+.msg-tbl td {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
 }
-.salary-info-left .msg-tbl tr .code{
+
+.salary-info-left .msg-tbl tr .code {
     width: 30mm;
 }
-.salary-info-left .msg-tbl tr .worker-name{
+
+.salary-info-left .msg-tbl tr .worker-name {
     width: 60mm;
 }
-.salary-info-left .msg-tbl tr th{
+
+.salary-info-left .msg-tbl tr th {
     font-weight: normal;
     background-color: #f1f1f1;
-    text-align:center;
+    text-align: center;
     font-size: 13px;
     padding: 2px;
 }
-.salary-info-left .msg-tbl tr td{
-    text-align:center;
+
+.salary-info-left .msg-tbl tr td {
+    text-align: center;
     font-size: 12px;
     padding: 1px;
 }
 
-
-.invoice-info-left{
-    text-align: left;
-    width: 110mm;
-}
-.invoice-info-left .envelope-window{
-    margin-top: 5mm;
-    margin-left: 13mm;
-    width: 90mm;
-    height: 40mm;
-    /* 印刷テスト次第で45mmに戻す */
-}
-.invoice-info-left .envelope-window .customer{
-    margin-bottom: 20mm;
-    margin-right: 25mm;
+.invoice-info-left {
+    width: 100mm;
     width: 65mm;
-    height: 25mm;
-}
-.invoice-info-left .envelope-window .customer .customer-contents{
-    padding: 2px;
+    height: 40mm;
+    padding: 5mm 22mm 0 13mm;
     line-height: 1.2;
     font-size: 12px;
-    border-width: 0px 0px 1px 0px;
-    border-style: none none solid none;
 }
-.invoice-info-left .envelope-window .customer .text{
+
+.invoice-info-left hr {
+    border-width: 0px 0px 1px 0px;
+    border-color: #000;
+}
+
+.invoice-info-left .text {
     margin-top: 5px;
     text-align: right;
-    line-height: 1.2;
     font-size: 10px;
 }
 
 
-.invoice-info-right{
-    text-align: right;
+.invoice-info-right {
     width: 70mm;
+    text-align: center;
 }
-.invoice-info-right .header{
+
+
+.invoice-info-right .header .date {
+    font-size: 10px;
     text-align: right;
 }
-.invoice-info-right .header .date{
-    font-size: 10px;
-}
+
 .invoice-info-right .header .title {
     font-size: 23px;
-    text-align: center;
     letter-spacing: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #f1f1f1;
+    font-weight: normal;
 }
-.invoice-info-right .ownCo{
+
+.invoice-info-right .ownCo {
     width: 70mm;
     text-align: left;
     line-height: 1.2;
     font-size: 10px;
 }
-.invoice-info-right .ownCo .ownCo-contents{
+
+.invoice-info-right .ownCo .ownCo-contents {
     text-align: left;
 }
-.invoice-info-right .ownCo .bank{
+
+.invoice-info-right .ownCo .ownCo-contents address strong {
+    font-size: 12px;
+}
+
+.invoice-info-right .ownCo .bank {
     margin-top: 10px;
 }
 
-.salary-info-right{
+.salary-info-right {
     text-align: left;
 }
-.salary-info-right .top-note{
+
+.salary-info-right .top-note {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
@@ -216,173 +237,198 @@ body {
     display: flex;
 
 }
-.salary-info-right .top-note .note-title{
+
+.salary-info-right .top-note .note-title {
     font-size: 12px;
     font-weight: bold;
     line-height: 1.5;
     width: 8mm;
 }
-.salary-info-right .top-note .note-contents{
+
+.salary-info-right .top-note .note-contents {
     margin-left: 2mm;
     line-height: 1.5;
     font-size: 10px;
 }
-.salary-info-right .company-name{
+
+.salary-info-right .company-name {
     text-align: right;
     line-height: 1.5;
     font-size: 13px;
 }
 
-.message{
-    display: flex !important;
-    justify-content:space-between;
-    margin-left: 5mm;
-    margin-right: 5mm;
+.message {
+    display: flex;
+    justify-content: space-between;
     height: 10mm;
+    padding: 0 5mm 0 8mm;
 }
-.message .msg-left{
-    padding-left: 3mm;
+
+.msg-left {
     width: 40%;
 }
-.message .msg-left .contents{
-    line-height: 1.2;
-    font-size: 10px;
 
+.msg-left .contents {
+    font-size: 10px;
+    line-height: 1;
+    text-align: left;
 }
-.message .msg-right .contents .msg-tbl{
+
+
+.msg-right .msg-tbl {
     margin: 1mm;
     border-collapse: collapse;
 }
-.message .msg-right .contents .msg-tbl th{
-    text-align:center;
 
+.msg-right .msg-tbl th,
+.msg-right .msg-tbl td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c7c7c7;
+    padding: 8.2px 5px;
+    font-size: 20px;
 }
-.message .msg-right .contents .msg-tbl td{
+
+.msg-right .msg-tbl td {
     text-align: center;
     padding-left: 4px;
     width: 55mm;
 }
-.message .msg-right .contents .msg-tbl th,.msg-tbl td {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #c7c7c7;
-    padding: 5px;
-    font-size: 20px;
-}
 
-.container .bottom-note{
+.container .bottom-note {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
     padding: 5px;
     height: 18mm;
-    margin-top: 200mm;  /*本来195mm*/
+    margin-top: 200mm;
+    /*本来195mm*/
     display: flex;
 
 }
-.container .bottom-note .note-title{
+
+.container .bottom-note .note-title {
     font-size: 12px;
     font-weight: bold;
     line-height: 1.5;
     width: 8mm;
 }
-.container .bottom-note .note-contents{
+
+.container .bottom-note .note-contents {
     margin-left: 2mm;
     line-height: 1;
     width: 170mm;
-    height:18mm ;
+    height: 18mm;
 
 }
 
-.tables{
+.tables {
     margin-top: 1mm;
 
 }
-.tables .subtotal-tbl-contents{
+
+.tables .subtotal-tbl-contents {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl{
+
+.tables .subtotal-tbl-contents .subtotal-tbl {
     width: 85%;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl table{
+
+.tables .subtotal-tbl-contents .subtotal-tbl table {
     table-layout: fixed;
     width: 100%;
     margin-top: 5px;
     border-collapse: collapse;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl .tbl-label{
+
+.tables .subtotal-tbl-contents .subtotal-tbl .tbl-label {
     font-size: 12px;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl table tr th ,.tables .subtotal-tbl table tr td{
+
+.tables .subtotal-tbl-contents .subtotal-tbl table tr th,
+.tables .subtotal-tbl table tr td {
     font-weight: normal;
     border-width: 1px 1px 1px 1px;
     border-style: solid solid solid solid;
     border-color: #c7c7c7;
     line-height: 1.5;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl table tr .title{
+
+.tables .subtotal-tbl-contents .subtotal-tbl table tr .title {
     font-size: 15px;
     width: 40px;
     text-align: center;
 }
-.tables .subtotal-tbl-contents .subtotal-tbl table th{
+
+.tables .subtotal-tbl-contents .subtotal-tbl table th {
     background-color: #f1f1f1;
     font-size: 10px;
 }
+
 .tables .subtotal-tbl-contents .subtotal-tbl table td {
     text-align: right;
     font-size: 9px;
 }
 
 
-.tables .subtotal-tbl-contents .total{
+.tables .subtotal-tbl-contents .total {
     display: flex;
     align-items: flex-end;
     width: 100px;
 }
 
-.tables .subtotal-tbl-contents .total table{
+.tables .subtotal-tbl-contents .total table {
     border-collapse: collapse;
     width: 100%;
-    align-items:flex-end;
+    align-items: flex-end;
 }
-.subtotal-tbl-contents .total .msg-tbl th,.subtotal-tbl-contents .total .msg-tbl td {
+
+.subtotal-tbl-contents .total .msg-tbl th,
+.subtotal-tbl-contents .total .msg-tbl td {
     border-width: 1px;
     border-style: solid;
     border-color: #c7c7c7;
     width: 20mm;
 }
-.subtotal-tbl-contents .total .msg-tbl tr th{
+
+.subtotal-tbl-contents .total .msg-tbl tr th {
     font-weight: normal;
     background-color: #f1f1f1;
-    text-align:center;
+    text-align: center;
     font-size: 13px;
     padding: 2px;
 }
-.subtotal-tbl-contents .total .msg-tbl tr td{
+
+.subtotal-tbl-contents .total .msg-tbl tr td {
     text-align: right;
     font-size: 12px;
     padding: 1px;
 }
 
 
-.list .table-contents{
+.list .table-contents {
     margin-top: 1mm;
 }
-.list .table-contents table{
+
+.list .table-contents table {
     border-collapse: collapse;
     width: 100%;
 }
-.list .table-contents .tbl-label{
+
+.list .table-contents .tbl-label {
     font-size: 12px;
 }
-.list .table-contents table th{
+
+.list .table-contents table th {
     font-weight: normal;
     font-size: 10px;
+    line-height: 1.5;
     border-width: 0px 0px 2px 0px;
     border-style: none none solid none;
 }
+
 .list .table-contents table td {
     line-height: 1.6;
     font-size: 9px;
@@ -390,10 +436,12 @@ body {
     border-style: none none solid none;
     width: fit-content;
 }
-.list .table-contents table th,.list .table-contents table td {
+
+.list .table-contents table th,
+.list .table-contents table td {
     border-color: #c7c7c7;
     padding: 0px;
-    max-width:120px;
+    max-width: 120px;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -401,14 +449,17 @@ body {
     padding-left: 10px;
 }
 
-.list .result{
+.list .result {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-.list .result table{
+
+.list .result table {
     width: 300px;
 }
-.list .result table th, .list .result table td{
+
+.list .result table th,
+.list .result table td {
     padding-left: 10px;
     padding-right: 10px;
 }
