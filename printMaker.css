@@ -33,6 +33,7 @@ body {
     padding: 10mm 10mm;
     /* 用紙の余白 */
     font-size: 11pt;
+    position: relative;
 }
 
 @media screen {
@@ -49,19 +50,17 @@ body {
     }
 }
 
-.page-contents {
-    position: relative;
+.page address {
+    font-style: normal;
 }
+
 
 .container {
     width: 100%;
-    position: absolute;
 }
 
 .list {
     width: 100%;
-    position: absolute;
-    top: 55mm
 }
 
 .salary-first-list {
@@ -87,7 +86,7 @@ body {
 }
 
 .sign {
-    width: 100%;
+    width: 190mm;
     position: absolute;
     top: 275mm;
     display: flex;
@@ -301,9 +300,10 @@ body {
     border-color: #c7c7c7;
     padding: 5px;
     height: 18mm;
-    margin-top: 200mm;
     /*本来195mm*/
     display: flex;
+    position: absolute;
+    bottom: 10mm;
 
 }
 
