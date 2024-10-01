@@ -1,8 +1,9 @@
-/* body {
-    font-family: sans-serif;
+body {
+    /* font-family: sans-serif;
     margin: 0;
-    padding: 20px;
-} */
+    padding: 20px; */
+    background-color: #fff;
+}
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -10,11 +11,11 @@
 }
 .title{
     text-align: center;
-    background-color: red;
+    color: red;
     margin-bottom: 20px;
 }
 .sub-title{
-    text-align: center;
+    text-align: left;
     font-size: 15px;
 }
 .table {
@@ -22,7 +23,7 @@
     height: 100%;
     border-collapse: collapse;
 }
-th, td {
+.main-table tr th, .main-table tr th {
     border: 1px solid #000;
     height: 55px;
     padding: 10px;
