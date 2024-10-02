@@ -16,8 +16,8 @@
 body {
     width: 210mm;
     /* 用紙の横幅を改めて指定 Chrome用 */
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    /* -webkit-print-color-adjust: exact;
+    color-adjust: exact; */
     line-height: 1.5em;
 }
 
