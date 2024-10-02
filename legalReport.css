@@ -65,35 +65,45 @@ body {
     padding: 20px;
 }
 .title{
+    letter-spacing: 7px;
+    font-size: 25px;
     text-align: center;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 .sub-title{
-    
+    margin-top: 30px;
+    margin-bottom: 40px;
     text-align: left;
     font-size: 15px;
 }
 .table {
     border-collapse: collapse;
 }
-.date-tr {
-    border: 1px solid #000;
+.date-table,
+.date-table th,
+.date-table td {
+    border: 1px solid black;
+    padding: 5px;
 }
-.date-table th {
-    border-top: 1px solid #333;
-    border-left: 1px solid #333;
-    border-right: 1px solid #333;
+
+.date-table .time-tr td,
+.date-table .time-tr th {
     border-bottom: none;
-    padding: 10px;
-    text-align: center;
 }
-.main-table tr th, .main-table tr th {
+.main-table tr th{
     height: 55px;
     padding: 10px;
     text-align: center;
     vertical-align: center;
 }
+.main-table,
+.main-table th,
+.main-table td {
+    border: 1px solid black;
+    padding: 5px;
+}
+/* テーブルの見出しの文字を普通にする */
 th {
     width: 30%;
     font-weight: normal;
