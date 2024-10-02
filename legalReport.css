@@ -66,10 +66,11 @@ body {
 }
 .title{
     text-align: center;
-    color: black !important;
+    color: black;
     margin-bottom: 20px;
 }
 .sub-title{
+    
     text-align: left;
     font-size: 15px;
 }
@@ -88,7 +89,6 @@ body {
     text-align: center;
 }
 .main-table tr th, .main-table tr th {
-    border: 1px solid #000;
     height: 55px;
     padding: 10px;
     text-align: center;
@@ -104,10 +104,10 @@ th {
     float: right;
 }
 .date-table th, .date-table td {
-    border: none;
     padding: 2px;
-    text-align: left;
+    text-align: center;
 }
 .main-table {
     clear: both;
+    border: 1px solid #000;
 }
