@@ -1,0 +1,27 @@
+.template-btn-normal {
+    display: block;
+    box-sizing: border-box;
+    margin-right: 8px;
+    padding: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    align-items: center;
+    width: fit-content;
+    border: solid 1px #e3e7e8;
+    background-color: #f7f9fa;
+    color: #000;
+    cursor: pointer;
+}
+
+#detailOutputButton:hover, .template-btn-normal:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#detailOutputButton, .template-btn-space {
+    display: flex;
+    align-items: center;
+    justify-content: cente;
+    padding: 5px 16px;
+}
