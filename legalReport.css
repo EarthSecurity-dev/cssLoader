@@ -16,8 +16,8 @@
 body {
     width: 210mm;
     /* 用紙の横幅を改めて指定 Chrome用 */
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    /* -webkit-print-color-adjust: exact;
+    color-adjust: exact; */
     line-height: 1.5em;
 }
 
@@ -66,7 +66,7 @@ body {
 }
 .title{
     text-align: center;
-    color: blue;
+    color: red;
     margin-bottom: 20px;
 }
 .sub-title{
@@ -169,7 +169,7 @@ th {
     padding: 8px;
     background-position: center;
     background-repeat: no-repeat;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     align-items: center;
     width: fit-content;
     border: solid 1px #e3e7e8;
