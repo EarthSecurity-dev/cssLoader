@@ -69,11 +69,11 @@ body {
     font-size: 25px;
     text-align: center;
     color: black;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 .sub-title{
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: left;
     font-size: 15px;
 }
@@ -91,6 +91,11 @@ body {
 .date-table .time-tr th {
     border-bottom: none;
 }
+.main-table{
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
 .main-table tr th{
     height: 55px;
     padding: 10px;
@@ -102,6 +107,10 @@ body {
 .main-table td {
     border: 1px solid black;
     padding: 5px;
+}
+/* 文字をテーブルの幅に合わせて折り返す */
+.main-td{
+    word-break: break-all;
 }
 /* テーブルの見出しの文字を普通にする */
 th {
