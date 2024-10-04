@@ -14,10 +14,12 @@
 
 /* 印刷時の調子を整える */
 body {
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+    background-color: #fff;
     width: 210mm;
     /* 用紙の横幅を改めて指定 Chrome用 */
-    /* -webkit-print-color-adjust: exact;
-    color-adjust: exact; */
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
     line-height: 1.5em;
 }
 
@@ -36,37 +38,17 @@ body {
     position: relative;
 }
 
-@media screen {
-    body {
-        background: #eee;
-    }
-
-    .page {
-        background: white;
-        /* 背景を白く */
-        box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
-        /* ドロップシャドウ */
-        margin: 5mm;
-    }
-}
-
 
 /* ----------------------プレビュー画面の苦情リストhtmlの設定----------------------- */
 
-/* body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #fff;
-} */
 .container {
-    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    width: 90%;
 }
 .title{
     letter-spacing: 7px;
-    font-size: 25px;
+    font-size: 18px;
     text-align: center;
     color: black;
     margin-bottom: 70px;
@@ -75,7 +57,7 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: left;
-    font-size: 15px;
+    font-size: 11px;
 }
 .table {
     border-collapse: collapse;
@@ -85,12 +67,10 @@ body {
 .date-table td {
     border: 1px solid black;
     padding: 5px;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-.date-table .time-tr td,
-.date-table .time-tr th {
-    border-bottom: none;
-}
 .main-table{
     width: 100%;
     height: 100%;
@@ -108,8 +88,12 @@ body {
     border: 1px solid black;
     padding: 5px;
 }
+.mult-line-text {
+    line-height: 1.1rem;
+}
 /* 文字をテーブルの幅に合わせて折り返す */
 .main-td{
+    font-size: 14px;
     word-break: break-all;
 }
 /* テーブルの見出しの文字を普通にする */
