@@ -1,3 +1,15 @@
+/* MEMO:CSS変数を導入し、共通の値を変数化 */
+:root {
+    --page-width: 210mm;
+    --page-height: 296.5mm;
+    --margin: 10mm;
+    --border-color: #000;
+    --main-font-size: 11pt;
+    --title-font-size: 18px;
+    --subtitle-font-size: 11px;
+    --table-font-size: 14px;
+}
+
 /* A4縦用のベース設定 */
 @page {
     size: A4 portrait;
@@ -5,109 +17,118 @@
     margin: 0mm;
 }
 
-/* 各要素の余白リセット */
+/* 全体のリセットとベース設定 */
 * {
-    margin: 0mm;
-    padding: 0mm;
+    margin: 0;
+    padding: 0;
     list-style: none;
+    box-sizing: border-box;
 }
 
 /* 印刷時の調子を整える */
 body {
-    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
     background-color: #fff;
-    width: 210mm;
-    line-height: 1.5em;
+    width: var(--page-width);
+    line-height: 1.5;
+    font-size: var(--main-font-size);
 }
 
 /* 印刷1ページ用のコンテンツはここで定義 */
 .page {
-    width: 210mm;
+    /* MEMO：コメントは原則上か右に記載してください */
     /* 用紙の横幅を改めて指定 */
-    height: 296.5mm;
+    width: var(--page-width);
     /* 高さには0.5mm余裕をもたせる */
+    height: var(--page-height);
     page-break-after: always;
-
-    box-sizing: border-box;
     padding: 10mm 10mm;
     /* 用紙の余白 */
-    font-size: 11pt;
     position: relative;
 }
 
 
 /* ----------------------プレビュー画面の苦情リストhtmlの設定----------------------- */
 
+/* コンテナ設定 */
 .container {
     margin: 0 auto;
     padding: 20px;
     width: 90%;
 }
-.title{
+
+/* タイトルと小見出し */
+.title {
     letter-spacing: 7px;
-    font-size: 18px;
+    font-size: var(--title-font-size);
     text-align: center;
     color: black;
     margin-bottom: 70px;
 }
-.sub-title{
-    margin-top: 30px;
-    margin-bottom: 30px;
+
+.sub-title {
+    margin: 30px 0;
     text-align: left;
-    font-size: 11px;
+    font-size: var(--subtitle-font-size);
 }
+
+
+/* テーブル共通設定 */
 .table {
     border-collapse: collapse;
 }
+
 .date-table,
-.date-table th,
-.date-table td {
-    border: 1px solid black;
-    padding: 5px;
-    font-size: 14px;
-    margin-bottom: 5px;
+.main-table {
+    border: 1px solid var(--border-color);
 }
 
-.main-table{
+.date-table th,
+.date-table td,
+.main-table th,
+.main-table td {
+    border: 1px solid var(--border-color);
+    padding: 5px;
+}
+
+/* 日付テーブル */
+.date-table {
+    width: auto;
+    float: right;
+    margin-bottom: 5px;
+    font-size: var(--table-font-size);
+}
+
+.date-table th,
+.date-table td {
+    text-align: center;
+}
+
+/* メインテーブル */
+.main-table {
     width: 100%;
     height: 100%;
     table-layout: fixed;
+    clear: both;
 }
-.main-table tr th{
+
+.main-table tr th {
     height: 55px;
     padding: 10px;
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
 }
-.main-table,
-.main-table th,
-.main-table td {
-    border: 1px solid black;
-    padding: 5px;
-}
-.mult-line-text {
-    line-height: 1.1rem;
-}
-/* 文字をテーブルの幅に合わせて折り返す */
-.main-td{
-    font-size: 14px;
+
+.main-td {
+    font-size: var(--table-font-size);
     word-break: break-all;
 }
-/* テーブルの見出しの文字を普通にする */
+
 th {
     width: 30%;
     font-weight: normal;
 }
-.date-table {
-    border: 1px solid #000;
-    width: auto;
-    float: right;
-}
-.date-table th, .date-table td {
-    padding: 2px;
-    text-align: center;
-}
-.main-table {
-    clear: both;
-    border: 1px solid #000;
+
+.mult-line-text {
+    line-height: 1.1rem;
 }
