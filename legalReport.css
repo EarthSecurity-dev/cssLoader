@@ -17,9 +17,6 @@ body {
     font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
     background-color: #fff;
     width: 210mm;
-    /* 用紙の横幅を改めて指定 Chrome用 */
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
     line-height: 1.5em;
 }
 
