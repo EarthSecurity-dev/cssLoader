@@ -88,7 +88,7 @@ body {
 .sign {
     width: 190mm;
     position: absolute;
-    top: 275mm;
+    bottom: 10mm;
     display: flex;
     justify-content: space-between;
 }
@@ -114,7 +114,7 @@ body {
     letter-spacing: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
 }
 
 .salary-info-left .period {
@@ -150,7 +150,7 @@ body {
 
 .salary-info-left .msg-tbl tr th {
     font-weight: normal;
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
     text-align: center;
     font-size: 13px;
     padding: 2px;
@@ -199,7 +199,7 @@ body {
     letter-spacing: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
     font-weight: normal;
 }
 
@@ -271,6 +271,19 @@ body {
     font-size: 10px;
     line-height: 1;
     text-align: left;
+}
+
+.msg-left .contents th {
+    width: 15mm;
+    font-weight: normal;
+    vertical-align:top;
+}
+.msg-left .contents td {
+    max-width: 55mm;
+    max-height: 10mm;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -363,7 +376,7 @@ body {
 }
 
 .tables .subtotal-tbl-contents .subtotal-tbl table th {
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
     font-size: 10px;
 }
 
@@ -395,7 +408,7 @@ body {
 
 .subtotal-tbl-contents .total .msg-tbl tr th {
     font-weight: normal;
-    background-color: #f1f1f1;
+    background-color: #eeeeee;
     text-align: center;
     font-size: 13px;
     padding: 2px;
