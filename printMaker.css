@@ -279,11 +279,13 @@ body {
     vertical-align:top;
 }
 .msg-left .contents td {
+    padding-top: 1px;
     max-width: 55mm;
-    max-height: 10mm;
-    white-space: nowrap;
+    min-height: 10px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 
