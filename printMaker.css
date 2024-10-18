@@ -330,7 +330,9 @@ body {
 }
 
 .container .bottom-note .note-contents {
+    margin-top: 2px;
     margin-left: 2mm;
+    font-size: 12px;
     line-height: 1;
     width: 170mm;
     height: 18mm;
